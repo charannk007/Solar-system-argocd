@@ -50,9 +50,16 @@ pipeline{
             }
         }
 
+    stage('Docker Build') {
+        steps {
+                sh 'docker build -t ${DOCKER_IMAGE_NAME}:${IMAGE_VERSION} .'
+                sh 'docker images'
+            }
+        }
+
     stage('Creating the Image') {
         steps {
-                sh 'docker tag ${DOCKER_IMAGE_NAME}:v2 ${USER_NAME}/${DOCKER_IMAGE_NAME}:v2'
+                sh 'docker tag ${DOCKER_IMAGE_NAME}:${IMAGE_VERSION} ${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:${IMAGE_VERSION}'
             }
         }
 
