@@ -32,4 +32,4 @@ spec:
     - protocol: TCP
       port: 80 # Port that the service will expose internally
       targetPort: 80 # Port on the container to send traffic to
-      nodePort: 30007 # Port to expose on the node
+      nodePort: 30012 # Port to expose on the node
