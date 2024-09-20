@@ -65,7 +65,7 @@ pipeline{
 
     stage('Docker Push Image') {
         steps {
-                sh 'docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:v2'
+                sh 'docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:${IMAGE_VERSION}'
             }
         }
     }
